@@ -1,0 +1,73 @@
+// ______________________________________ start bullet navbar ________________________________
+.bullet {
+  @extend %p_fixed;
+  @extend %transition1;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+
+  &.visible {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  li {
+    @extend %p_relative;
+    margin: 15px 0;
+    &.active {
+      a {
+        background-color: var(--main_color_alt1);
+      }
+    }
+
+    &:hover {
+      span {
+        display: block;
+      }
+    }
+
+    a {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1.5px solid var(--main_color_alt1);
+      display: block;
+    }
+    span {
+      @extend %p_absolute;
+      display: none;
+      left: 0;
+      top: 50%;
+      transform: translate(-120%, -50%);
+      background-color: var(--main_color_alt1);
+      @extend %t_uppercase;
+      padding: 5px 15px;
+      font-size: 15px;
+      border-radius: 5px;
+      color: var(--main_color_alt4);
+      &::before {
+        content: "";
+        @extend %p_absolute;
+        border-width: 12px;
+        border-style: solid;
+        border-color: transparent transparent transparent var(--main_color_alt1);
+        right: 5px;
+        top: 50%;
+        transform: translate(100%, -50%);
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .bullet {
+    right: 6px;
+    a {
+      width: 6px !important;
+      height: 25px !important;
+      border-radius: 3px !important;
+    }
+  }
+}
+
+// ______________________________________ end bullet navbar ________________________________

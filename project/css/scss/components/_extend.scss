@@ -1,0 +1,52 @@
+// _____________________________________ start extend _____________________________________
+
+// position
+%p_absolute {
+  position: absolute;
+}
+%p_relative {
+  position: relative;
+}
+%p_fixed {
+  position: fixed;
+}
+
+// overlay
+%overlay {
+  @extend %p_absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+// color
+
+// text transform
+%t_capitalize {
+  text-transform: capitalize;
+}
+
+%t_uppercase {
+  text-transform: uppercase;
+}
+
+// cursor
+%c_pointer {
+  cursor: pointer;
+}
+// transition
+%transition1 {
+  transition: all 0.5s linear;
+}
+%font_style {
+  font-style: italic;
+}
+%font_weight {
+  font-weight: bold;
+}
+%t_center {
+  text-align: center;
+}
+// _____________________________________ start extend _____________________________________

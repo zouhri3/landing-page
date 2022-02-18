@@ -1,0 +1,22 @@
+@import "helpers/variabla";
+
+// ================== this is ruls css =============
+@import "layout/global";
+@import "components/grid";
+@import "components/extend";
+@import "components/heading";
+@import "components/bullet";
+@import "layout/settings";
+
+// -------------------------
+@import "layout/preload";
+@import "layout/header";
+@import "page/landing_page";
+@import "page/about_page";
+@import "page/skill_page";
+@import "page/timeline_page";
+@import "page/gallery_page";
+@import "page/features_page";
+@import "page/testimonials_page";
+@import "page/contact_page";
+@import "layout/footer";

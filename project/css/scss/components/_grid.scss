@@ -1,0 +1,38 @@
+// ______________________________________ start grid system  ________________________________
+
+.grid {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+// ______________________________________ end grid system  ________________________________
+
+// ______________________________________ start container ________________________________
+
+// ______________________________________ start container ________________________________
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 767px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+// ______________________________________ end container ________________________________

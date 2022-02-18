@@ -1,0 +1,52 @@
+// _____________________________________ start about_page _____________________________________
+.about {
+  padding-top: var(--padding_section);
+  padding-bottom: var(--padding_section);
+  h2 {
+    margin: 0;
+  }
+  .grid {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .content_text {
+    width: 60%;
+    p {
+      text-indent: 20px;
+    }
+  }
+  .content_img {
+    @extend %t_center;
+    display: flex;
+    overflow: hidden;
+    svg {
+      margin: auto;
+    }
+  }
+}
+@media (max-width: 970px) {
+  .about .grid {
+    .content_img {
+      width: 30%;
+    }
+  }
+}
+@media (max-width: 767px) {
+  h2 {
+    text-align: center;
+  }
+  .about .grid {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .content_text {
+      order: 2;
+      width: 100%;
+    }
+    .content_img {
+      width: 100%;
+      order: 1;
+    }
+  }
+}
+// _____________________________________ start about_page _____________________________________

@@ -1,0 +1,43 @@
+// _____________________________________ start global ruls _____________________________________
+
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  user-select: none;
+}
+html {
+  scroll-behavior: smooth !important;
+  &.scroll_padding {
+    scroll-padding: 80px;
+  }
+}
+
+@media (max-width: 970px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+}
+.hide_scroll {
+  overflow: hidden;
+}
+// ______________________________________ start all reset ________________________________
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+p {
+  color: var(--main_color_overlay);
+  line-height: 1.7;
+  word-spacing: 5px;
+}
+// ______________________________________ end all reset ________________________________
+// _____________________________________ end global ruls _____________________________________

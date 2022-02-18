@@ -1,0 +1,131 @@
+// _____________________________________ start timeline_page _____________________________________
+.timeline {
+  padding-top: var(--padding_section);
+  padding-bottom: var(--padding_section);
+  background-color: var(--main_color_alt4);
+  .timeline_container {
+    @extend %p_relative;
+    overflow: hidden;
+    &::before {
+      @extend %p_absolute;
+      content: "";
+      left: 50%;
+      width: 3px;
+      height: 100%;
+      background-color: var(--main_color);
+      top: 0;
+      transform: translateX(-50%);
+    }
+    .timeline_box {
+      @extend %p_relative;
+      width: calc(50% - 1.5625rem);
+      background-color: var(--main_color_alt3);
+      margin-top: calc(var(--padding_section) * 2);
+      padding: 5px 20px;
+      &:last-of-type {
+        margin-bottom: var(--padding_section);
+      }
+      &::before {
+        @extend %p_absolute;
+        @extend %font_weight;
+        content: attr(data-year);
+        top: calc(var(--padding_section) * -1);
+        background-color: var(--main_color);
+        z-index: 2;
+        padding: 3px 6px;
+        color: var(--main_color_alt4);
+        font-size: 1rem;
+        border-radius: 4px;
+        transform: translate(-50%, -50%);
+      }
+      &::after {
+        @extend %p_absolute;
+        content: "";
+        top: 41px;
+        border: 3px solid var(--main_color);
+        background-color: var(--main_color_alt4);
+        z-index: 2;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &.right {
+        float: right;
+        &::before,
+        &::after {
+          left: calc(-1.5625rem);
+        }
+        h3 {
+          &::before {
+            left: -42px;
+            border-color: transparent var(--main_color_alt3) transparent
+              transparent;
+          }
+        }
+      }
+      &.left {
+        float: left;
+        &::before,
+        &::after {
+          left: calc(100% + 1.5625rem);
+        }
+        h3 {
+          &::before {
+            right: -42px;
+            border-color: transparent transparent transparent
+              var(--main_color_alt3);
+          }
+        }
+      }
+      h3 {
+        @extend %p_relative;
+        @extend %font_weight;
+        @extend %t_capitalize;
+        font-size: 1.4375em;
+        color: var(--main_color);
+        font-family: "Charm", cursive;
+        margin-bottom: 1.5625rem;
+        &::before {
+          @extend %p_absolute;
+          content: "";
+          top: 9%;
+          border-width: 11px;
+          border-style: solid;
+        }
+      }
+      p {
+        @extend %font_style;
+        margin-top: -14px;
+        font-size: 0.9375em;
+        text-indent: 10px;
+      }
+    }
+    .clear_float {
+      clear: both;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .timeline_box {
+    margin-top: calc(var(--padding_section) * 1.5) !important;
+    width: 100% !important;
+    font-size: 15px;
+    &.left,
+    &.right {
+      &::before {
+        left: 50% !important;
+        top: calc(var(--padding_section) * -0.75) !important;
+      }
+    }
+    &::after {
+      display: none;
+    }
+    h3 {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+// _____________________________________ end timeline_page _____________________________________

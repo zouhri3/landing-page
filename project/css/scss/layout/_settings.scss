@@ -1,0 +1,123 @@
+// _____________________________________ start settings _____________________________________
+.settings_box {
+  @extend %transition1;
+  @extend %p_fixed;
+  left: -200px;
+  width: 200px;
+  top: 0;
+  z-index: 99;
+  background-color: var(--main_color_alt4);
+  min-height: 100vh;
+  &.fixed {
+    @extend %transition1;
+    top: 80px;
+    h3 {
+      background-color: var(--main_color_alt1);
+    }
+  }
+  &.open {
+    left: 0 !important;
+    box-shadow: 10px 0px 7px -8px var(--main_color_overlay);
+  }
+  .setting_gear {
+    @extend %c_pointer;
+    @extend %p_absolute;
+    top: 100px;
+    right: -30px;
+    padding: 5px;
+    width: 30px;
+    @extend %t_center;
+
+    background-color: var(--main_color_alt4);
+    .fas {
+      color: var(--main_color);
+    }
+  }
+  .heading_settings {
+    @extend %t_center;
+    @extend %t_uppercase;
+    @extend %font_style;
+    @extend %font_weight;
+    font-size: 1.375em;
+    background-color: var(--main_color);
+    margin: 0;
+    padding: 20px;
+    color: var(--main_color_alt4);
+  }
+  .option {
+    @extend %t_center;
+    background: var(--main_color_alt3);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    h4 {
+      font-size: 1.1em;
+      font-family: "Charm", cursive;
+      @extend %t_capitalize;
+      font-weight: bold;
+      margin: 5px;
+      padding-bottom: 8px;
+      color: var(--main_color);
+    }
+    &.thems {
+      .items {
+        @extend %c_pointer;
+        width: 1.5625em;
+        height: 1.5625em;
+        border-radius: 50%;
+        margin: 2px;
+        display: inline-block;
+        &.active {
+          box-shadow: 0 0 10px 5px var(--main_color);
+        }
+      }
+    }
+    &.random_background,
+    &.navbars_settings {
+      .btn {
+        @extend %c_pointer;
+        @extend %t_center;
+        @extend %t_uppercase;
+        padding: 3px 11px;
+        background: transparent;
+        border: 1px solid var(--main_color_alt4);
+        border-radius: 5px;
+        font-size: 0.6875em;
+        margin: 0 6px;
+        color: var(--main_color_alt4);
+        &.active {
+          background: var(--main_color_alt1) !important;
+          transform: scale(1.2);
+          font-size: 0.75em !important;
+          @extend %font_weight;
+
+          border-color: var(--main_color_alt1);
+        }
+      }
+    }
+    &.navbars_settings {
+      .btn {
+        display: block;
+        margin: 10px auto;
+      }
+    }
+    &.reset_option {
+      padding: 4px;
+      cursor: not-allowed;
+      opacity: 0.4;
+      background-color: var(--main_color);
+      &.active {
+        @extend %c_pointer;
+        opacity: 1;
+      }
+      h4 {
+        color: var(--main_color_alt4);
+        font-size: 1.2em;
+        padding-bottom: 0px;
+        pointer-events: none;
+        @extend %font_style;
+      }
+    }
+  }
+}
+// _____________________________________ end settings _____________________________________

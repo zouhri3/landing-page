@@ -1,0 +1,11 @@
+// _____________________________________ start heading _____________________________________
+.heading {
+  color: var(--main_color);
+  font-size: 30px;
+  font-weight: bold;
+  @extend %t_capitalize;
+  @extend %font_style;
+  margin: 0 0 var(--padding_section) 0;
+  font-family: "Source Serif 4", sans-serif;
+}
+// _____________________________________ end heading _____________________________________

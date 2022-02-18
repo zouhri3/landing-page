@@ -1,0 +1,118 @@
+// _____________________________________ start header _____________________________________
+
+.section_header {
+  @extend %transition1;
+  z-index: 999;
+  &.fixed {
+    @extend %transition1;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    header {
+      @extend %transition1;
+      padding: 25px 0;
+      min-height: 80px;
+      &::after {
+        @extend %transition1;
+        opacity: 1;
+      }
+    }
+  }
+  header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    @extend %p_relative;
+
+    &::after {
+      content: "";
+      @extend %p_absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--main_color);
+      z-index: -1;
+      opacity: 0;
+    }
+    &.active {
+      z-index: 99999;
+      &::after {
+        opacity: 1;
+      }
+
+      nav {
+        transform: translateY(100%);
+        opacity: 1;
+      }
+    }
+    .grid.container {
+      @extend %t_capitalize;
+      justify-content: space-between;
+    }
+    .logo {
+      color: var(--main_color_alt1);
+      width: 200px;
+      font-size: 1.5625rem;
+      @extend %font_weight;
+      @extend %font_style;
+    }
+    .icon_bar {
+      color: var(--main_color_alt1);
+      font-size: 1.875rem;
+      @extend %c_pointer;
+    }
+    nav {
+      z-index: -2;
+      @extend %transition1;
+      background-color: var(--main_color);
+      @extend %p_absolute;
+      left: 0;
+      width: 100%;
+      height: fit-content;
+      display: block;
+      transform: translateY(-100%);
+      bottom: 0;
+      opacity: 0;
+      .container {
+        padding: 25px 0;
+        border-top: 1px solid var(--main_color_alt1);
+      }
+      .item {
+        &.active {
+          a {
+            @extend %transition1;
+            color: var(--main_color_alt1);
+          }
+        }
+        a {
+          font-family: "Charm", cursive;
+          font-size: 1.25rem;
+          letter-spacing: 1px;
+          display: inline-block;
+          padding: 10px 20px;
+          color: var(--main_color_alt3);
+          &:hover {
+            color: var(--main_color_alt1);
+          }
+        }
+      }
+      img {
+        border-style: none;
+        width: 400px;
+        border: 1px solid var(--main_color_alt1);
+        border-radius: 10px;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  nav {
+    img {
+      display: none !important;
+    }
+  }
+}
+// _____________________________________ end header _____________________________________

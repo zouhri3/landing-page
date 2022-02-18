@@ -1,0 +1,82 @@
+// _____________________________________ start testimonails _____________________________________
+.testimonails {
+  @extend %p_relative;
+  padding-top: var(--padding_section);
+  padding-bottom: var(--padding_section);
+  h2 {
+    color: var(--main_color_alt4) !important;
+  }
+  &::after,
+  &::before {
+    @extend %p_absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+  }
+  &::after {
+    left: 0;
+    background-color: var(--main_color_alt1);
+  }
+  &::before {
+    background-color: var(--main_color);
+    right: 0;
+  }
+  .container > .grid {
+    justify-content: center;
+    grid-gap: 30px;
+    align-items: stretch;
+  }
+  .testimonails_box {
+    min-width: 300px;
+    background: var(--main_color_alt4);
+    padding: 20px;
+    flex: 1;
+
+    > p {
+      @extend %t_capitalize;
+      // @extend %font_style;
+      @extend %t_center;
+      margin-top: 5px;
+      color: var(--main_color);
+      font-size: 1.15rem;
+      font-family: "Charm", cursive;
+      i {
+        font-size: 10px;
+        @extend %font_style;
+        color: var(--main_color_alt1);
+      }
+    }
+    .owner_info {
+      img {
+        width: 75px;
+        height: 75px;
+        border: 1px solid var(--main_color_alt3);
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: 75%;
+      }
+      div {
+        @extend %t_capitalize;
+        width: calc(100% - 90px);
+        padding: 5px;
+        h3 {
+          @extend %t_uppercase;
+          @extend %p_relative;
+
+          font-size: 1em;
+          color: var(--main_color_alt1);
+          margin-bottom: -4px;
+          font-family: "Charm", cursive;
+        }
+        p {
+          opacity: 0.4;
+          font-size: 0.875em;
+        }
+      }
+    }
+  }
+}
+
+// _____________________________________ end testimonails _____________________________________

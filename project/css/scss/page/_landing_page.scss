@@ -1,0 +1,55 @@
+// _____________________________________ start landing_page _____________________________________
+.landing_page {
+  @extend %p_relative;
+  min-height: 100vh;
+  background-image: url("../image/back/1 (2).jpg");
+  background-size: cover;
+  background-position: 50% 60%;
+  background-attachment: fixed;
+  &::before {
+    @extend %overlay;
+    background-color: var(--main_color_overlay);
+  }
+
+  .introduction {
+    color: var(--main_color_alt4);
+    @extend %p_absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @extend %t_center;
+
+    h1 {
+      @extend %t_uppercase;
+      font-weight: bolder;
+      font-size: 2.5em;
+      line-height: 1.6;
+
+      span {
+        color: var(--main_color);
+        font-family: "Charm", cursive;
+        @extend %font_style;
+      }
+    }
+    p {
+      line-height: 2;
+      letter-spacing: 0.7px;
+      word-spacing: 2px;
+      font-size: 1em;
+      width: 80%;
+      @extend %t_center;
+
+      color: #ffffff91;
+      @extend %t_capitalize;
+      margin: auto;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .introduction {
+    font-size: 12px;
+    width: 100%;
+  }
+}
+// _____________________________________ end landing_page _____________________________________

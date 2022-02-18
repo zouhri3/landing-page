@@ -1,0 +1,61 @@
+// _____________________________________ start skills _____________________________________
+.skills {
+  padding-top: var(--padding_section);
+  padding-bottom: var(--padding_section);
+  background-color: var(--main_color_alt4);
+  h2 {
+    @extend %t_center;
+    padding-bottom: var(--padding_section);
+    margin: 0;
+  }
+  .skill_box {
+    background: var(--main_color_alt3);
+    padding: 0.6875em;
+    &:not(:first-of-type) {
+      margin: 24px auto;
+    }
+    .skills_name {
+      @extend %t_uppercase;
+      @extend %t_center;
+      @extend %font_weight;
+      width: 150px;
+      font-size: 1em;
+      font-family: "Charm", cursive;
+      color: var(--main_color);
+      border-radius: 5px;
+    }
+    .skill_progress {
+      width: calc(100% - 150px);
+      height: 1.875em;
+      background-color: var(--main_color_alt4);
+      border-radius: 5px;
+      overflow: hidden;
+      span {
+        @extend %transition1;
+        width: 0;
+        background-color: var(--main_color);
+        height: 100%;
+        display: block;
+      }
+    }
+  }
+}
+@media (max-width: 970px) {
+  .skills {
+    font-size: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .skills {
+    font-size: 14px;
+    .skills_name {
+      width: 100% !important;
+      margin: 10px auto !important;
+    }
+    .skill_progress {
+      width: 100% !important;
+      margin-bottom: 10px !important;
+    }
+  }
+}
+// _____________________________________ end skills _____________________________________

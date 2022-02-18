@@ -1,0 +1,78 @@
+// _____________________________________ start features_page _____________________________________
+.features {
+  padding-top: var(--padding_section);
+  padding-bottom: var(--padding_section);
+  h2 {
+    @extend %t_center;
+  }
+  .grid {
+    justify-content: space-between;
+    align-items: flex-start;
+    grid-gap: 30px;
+  }
+  .feature_box {
+    width: 285px;
+    @extend %t_center;
+    padding: 8px;
+    img {
+      padding: 10px;
+      border: 2px solid var(--main_color_alt1);
+      border-radius: 50%;
+      width: 85px;
+      width: 85px;
+      object-fit: cover;
+      object-position: 70%;
+    }
+    h3 {
+      font-size: 1.25em;
+      font-weight: bold;
+      margin-top: 5px;
+      @extend %t_uppercase;
+      @extend %font_style;
+
+      color: var(--main_color_alt1);
+      @extend %p_relative;
+      &::after {
+        @extend %p_absolute;
+        content: "";
+        background-color: var(--main_color_alt1);
+        bottom: -16px;
+        width: 50px;
+        height: 4px;
+        left: calc(50% - 25px);
+      }
+    }
+    p {
+      font-size: 0.9375em;
+    }
+  }
+}
+@media (max-width: 667px) {
+  .feature_box {
+    font-size: 15px;
+    width: 100% !important;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "img title" "img desc";
+    border: 1px solid var(--main_color_alt1);
+    align-items: center;
+    text-align: start !important;
+    grid-column-gap: 30px;
+    border-radius: 5px;
+    img {
+      grid-area: img !important;
+    }
+    h3 {
+      grid-area: title !important;
+      margin-bottom: 0;
+      &::after {
+        display: none;
+      }
+    }
+    p {
+      grid-area: desc !important;
+    }
+  }
+}
+
+// _____________________________________ end features_page _____________________________________
